@@ -19,13 +19,14 @@ router.post(
 )
 
 // Logout
-router.post('/logout', auth.isAuthenticated, auth.deauthenticateUser)
+router.post('/logout', auth.isTokenVerified, auth.deauthenticateUser)
 
-// // Get user's data
-// router.get(
-//   '/:username',
-//   auth.isAuthenticated,
-//   auth.getUserData
-// )
+// Get user's data
+router.get(
+  '/:username',
+  auth.isTokenVerified,
+  auth.isAuthenticated,
+  auth.getUserData
+)
 
 module.exports = router

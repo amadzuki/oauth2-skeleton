@@ -3,7 +3,6 @@ module.exports = {
   deauthenticateUser: require('./deauthenticateUser'),
   getUserData: require('./getUserData'),
   isAuthenticated: require('./isAuthenticated'),
-  isAuthorized: require('./isAuthorized'),
   isPasswordMatched: require('./isPasswordMatched'),
   isEmailRegistered: require('./isEmailRegistered'),
   isUsernameRegistered: require('./isUsernameRegistered'),

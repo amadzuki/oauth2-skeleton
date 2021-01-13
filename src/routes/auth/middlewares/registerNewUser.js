@@ -24,7 +24,7 @@ module.exports = async (req, res) => {
 
     await User.create(newUser)
 
-    res.status(200).send({
+    res.status(201).send({
       message: 'User is successfully registered!',
       data: { username: newUser.username, email: newUser.email },
     })

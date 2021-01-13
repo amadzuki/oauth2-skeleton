@@ -10,27 +10,21 @@ router.post(
   auth.registerNewUser
 )
 
-// // Login
-// router.post(
-//   '/login',
-//   auth.isEmailRegistered,
-//   auth.isPasswordMatched,
-//   auth.authenticateUser
-// )
+// Login
+router.post(
+  '/login',
+  auth.isEmailRegistered,
+  auth.isPasswordMatched,
+  auth.authenticateUser
+)
 
-// // Logout
-// router.post(
-//   '/logout',
-//   auth.isAuthenticated,
-//   auth.isAuthorized,
-//   auth.deauthenticateUser
-// )
+// Logout
+router.post('/logout', auth.isAuthenticated, auth.deauthenticateUser)
 
 // // Get user's data
 // router.get(
 //   '/:username',
 //   auth.isAuthenticated,
-//   auth.isAuthorized,
 //   auth.getUserData
 // )
 

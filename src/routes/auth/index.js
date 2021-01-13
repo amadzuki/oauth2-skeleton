@@ -1,9 +1,37 @@
 const express = require('express')
 const router = express.Router()
+const auth = require('./middlewares')
 
-/* GET users listing. */
-router.get('/', (req, res) => {
-  res.send({ title: 'Authentication endpoint' })
-})
+// Register
+router.post(
+  '/register',
+  auth.isEmailRegistered,
+  auth.isUsernameRegistered,
+  auth.registerNewUser
+)
+
+// // Login
+// router.post(
+//   '/login',
+//   auth.isEmailRegistered,
+//   auth.isPasswordMatched,
+//   auth.authenticateUser
+// )
+
+// // Logout
+// router.post(
+//   '/logout',
+//   auth.isAuthenticated,
+//   auth.isAuthorized,
+//   auth.deauthenticateUser
+// )
+
+// // Get user's data
+// router.get(
+//   '/:username',
+//   auth.isAuthenticated,
+//   auth.isAuthorized,
+//   auth.getUserData
+// )
 
 module.exports = router
